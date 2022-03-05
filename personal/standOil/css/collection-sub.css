@@ -48,6 +48,6 @@
     position: relative;
     outline: 5px solid #dd3434e1;
     transition: all 0.2s;
-    transform: scale(1.05);
+    transform: scale(1.03);
     z-index: 1000;
 }

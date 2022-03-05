@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <title>Stand oil</title>
+</head>
+
+<body>
+    <div class="ibx">
+        <!-- 상단영역 -->
+        <section class="navbar">
+            <div class="lnav">
+                <ul>
+                    <li><a href="#">ABOUT</a></li>
+                    <ol class="smenu"><a href="#">SHOP</a>
+                        <li>
+                            <a href="./shop.html">New</a>
+                        </li>
+                        <li>
+                            <a href="./shop best.html">Best Seller</a>
+                        </li>
+                    </ol>
+                    <li><a href="./collection.html">COLLECTION</a></li>
+                    <li><a href="./archive.html">ARCHIVE</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="./index.html"><img src="./images/logo.png" alt="logo"></a>
+            </div>
+            <div class="rnav">
+                <ul>
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">MYPAGE</a></li>
+                    <li><a href="#">CART</a></li>
+                    <li><a href="#">COMMUNITY</a></li>
+                </ul>
+            </div>
+        </section>
+        <!-- 메인영역 -->
+        <section class="main">
+            <h1>Stand for your daily life full of inspiration.</h1>
+            <div class="slide">
+                <img src="./images/main3.jpg" alt="이미지">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="content">
+                                <h1>'익숙함 속의 새로움'</h1><br>
+                                <span>스탠드오일은 일상에서 늘 함께 할 수 있는 데일리백을 키워드로 라이프 스타일에 즐거움과 영감을
+                                    줄 수 있는 상품을 선보입니다.</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="content">
+                                <h1>'비건패션 브랜드'</h1><br>
+                                <span>'비건패션 브랜드'
+                                    비동물성 가죽인 비건 레더를 사용을 시작으로 지속가능한 패션을 고민합니다.</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="content">
+                                <h1>'변하지 않는 가치'</h1><br>
+                                <span>클래식한 형태에 기반한 타임리스, 미니멀 디자인을 추구하며
+                                    시즌마다 트렌드를 접목하여 스탠드오일 만의 감성으로 재해석합니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <!-- 하단영역 -->
+        <section class="footer">
+            <div>
+                <span>Tel-2174-8319</span><br>
+                <span>Mon-Fri. AM10:00-PM16:00</span><br>
+                <span>점심시간 (12:30-14:00)</span><br>
+                <span>Owner 김정헌</span><br>
+            </div>
+            <div>
+                <span>E-mail</span><br>
+                <span>standoilofficial@gmail.com</span><br>
+                <span>Business number-5148194739</span><br>
+                <span>Address 서울 성동구 뚝섬로 1길 63</span><br>
+            </div>
+            <div>
+                <span>terms & policy guide</span><br>
+            </div>
+        </section>
+    </div>
+</body>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+    });
+</script>
+
+</html>

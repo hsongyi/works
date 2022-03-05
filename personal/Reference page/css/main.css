@@ -1,0 +1,101 @@
+@charset "utf-8";
+@import url(./reset.css);
+@import url(./common.css);
+
+/* 메인페이지 css */
+
+/* 체크박스 카테고리 */
+#category  {
+    display: flex;
+    margin: -5px 20px 50px 20px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+body h2 {
+    display: inline-block;
+    margin-left: 22px;
+    font-size: 16px;
+}
+
+.wrapper {
+    display : flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.wrapperA {
+    display: flex;
+    width: 100px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.wrapperB {
+    margin-top: 10px;
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+input[type='checkbox'] + label{
+    margin-right: 10px;
+    width: 70px;
+    margin-top: 10px;
+    white-space: nowrap;
+}
+
+input[type='checkbox'] {
+    margin-top: 11px;
+}
+
+input[id='All'] + label {
+    position: relative;
+    margin-right: 50px;
+    white-space: nowrap;
+}
+
+/* 아이템박스 */
+
+#contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* center 설정시 가운데정렬 */
+    margin: 30px 10px;
+}
+
+
+/* 이미지 크기 */
+.itembox img{
+    margin: 8px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.itembox {
+    margin: 30 0px;
+    display: none;
+}
+
+input[type='checkbox']:checked .itembox{
+    display: block;
+}
+
+
+
+
+
+@media screen and (max-width: 500px) {
+    .wrapperB {
+        margin-top: 10px;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+
+    #contents {
+        justify-content: center; 
+    }
+}

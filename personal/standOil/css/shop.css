@@ -1,0 +1,64 @@
+@charset "utf-8";
+@import url(./reset.css);
+@import url(./common.css);
+
+.ibx {
+    width: 100vw;
+    height: 100vh;
+}
+
+.main {
+    margin: 0 auto;
+    margin-top: 100px;
+    max-width: 1200px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main h1 {
+    margin: 30px;
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #333;
+}
+
+.product {
+    padding: 0px 40px;
+    margin-top: 20px;
+}
+
+.itembox {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.itembox li{
+    position: relative;
+    width: 30%;
+    margin: 0 5px;
+}
+
+.itembox li:hover {
+    filter: brightness(105%);
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.product img {
+    width: 100%;
+    height: 80%;
+}
+
+.itembox span {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: min(1em,12px);
+    white-space: nowrap;
+}
+
+.itembox span:last-child {
+    padding-top: 2px;
+    color: #888888;
+}

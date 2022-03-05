@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+/* 공통 css */
+
+@font-face {
+    font-family:'roboto';
+    src: url(../font/RobotoSlab-VariableFont_wght.ttf);
+    unicode-range: U+0041-005A,U+0061-007A;
+}
+@font-face {
+    font-family: 'NGS';
+    src: url(../font/NanumSquareR.ttf);
+    unicode-range: U+AC00-D7A3;
+}
+
+body {
+    font-family: 'roboto','NGS';
+    width: 1920px;
+    font-size: 12px;
+    margin: 0 auto;
+}   
+
+/* 네비게이션 */
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    height: 65px;
+    background-color: #fff;
+    top: 0;
+    opacity: 1;
+    z-index: 10002;
+}
+
+.navbar:hover {
+    opacity: .9;
+}
+
+/* 로고 */
+
+.logo img {
+    width: 130px;
+    height: 20px;
+    margin-top: 16%;
+}
+/* 왼쪽메뉴 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.lnav a:hover,
+.rnav a:hover {
+    color:#DD3434;
+}
+
+.lnav ul{
+    display: flex;
+    margin-top: 9%;
+}
+
+.lnav ul>li {
+    margin-right: 15px;
+}
+
+/* 오른쪽 메뉴 */
+.rnav ul {
+    display: flex;
+    margin-top: 9%;
+}
+
+.rnav li {
+    margin-right: 15px;
+}
+
+.smenu {
+    position: relative;
+    padding-bottom: 3px;
+}
+.smenu li{
+    display:none;
+    position: absolute;
+    top: 17px;
+    left: 2px;
+    padding: 3px 0;
+}
+
+.smenu li>a {
+    line-height: 1.5;
+    color: #777;
+}
+
+.smenu li:last-child {
+    width: 100px;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.lnav ol:hover li{
+    display: inline;
+}
+
+.lnav ol {
+    margin-right: 15px;
+}
+
+/* 메인 */
+
+.main {
+    margin-top: 100px;
+}
+/* 푸터 */
+
+.footer {
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 220px;
+    padding: 40px 80px;
+    color: #555;
+    font-size: 16px;
+    background-color: #fff;
+    opacity: .7;
+    font-size: 12px;
+}
+
+.footer {
+    border-top: 1px solid #b0b0b0;
+}
+
+.footer div {
+    padding-right: 15px;
+}

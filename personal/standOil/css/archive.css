@@ -22,7 +22,9 @@
 
 .main h1 {
     margin: 10px 0;
+    font-size: min(2em,14px);
 }
+
 
 /* 세로스크롤슬라이드 */
 

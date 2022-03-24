@@ -297,8 +297,9 @@ header {
 /* 책리스트 */
 
 .blist {
+    width: 100%;
     display: flex;
-    justify-content: center;
+
     align-items: flex-end;
     margin-top: 60px;
     text-align: center;
@@ -410,7 +411,7 @@ header {
 /************ 메인 컨텐츠 5 ************/
 
 .mbx_7 {
-    padding: 50px 0;
+    padding: 50px 10px;
     background-color: #ffeb60;
 }
 
@@ -418,7 +419,7 @@ header {
     height: auto;
     position: relative;
     margin: 50px;
-    padding: 30px;
+    padding: 25px;
     padding-top: 20px;
     background-color: #fff;
     border-radius: 5px;

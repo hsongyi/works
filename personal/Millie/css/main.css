@@ -16,7 +16,7 @@ body * {
 header {
     position: fixed;
     width: 100%;
-    background: #a7a39a;
+    background: #a7a39aad;
     border-bottom: .5px solid #fff;
     z-index: 10002;
 }
@@ -63,11 +63,11 @@ header {
 /* 타이틀 문구 */
 
 .mtitle {
-    padding: 3% 4% 0 8%;
+    padding: 5% 4% 0 8%;
 }
 
 .mtitle img {
-    max-width: min(30vw, 350px);
+    max-width: min(25vw, 260px);
     vertical-align: top;
 }
 
@@ -135,8 +135,8 @@ header {
 }
 
 .info {
-    margin-top: 30px;
-    padding: 15px;
+    margin-top: 40px;
+    padding: 30px;
 }
 
 .info h3 {
@@ -170,6 +170,35 @@ header {
 .bookList img {
     width: 200%;
 }
+
+/* 책 흐르게 하기 css */
+
+.book_1,
+.book_3 {
+    position: relative;
+    left: 0;
+    animation: bookflow 30s linear infinite;
+}
+
+.book_2 {
+    position: relative;
+    left: -100%;
+    animation: bookflow2 30s linear infinite;
+}
+
+@keyframes bookflow {
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes bookflow2 {
+    to {
+        left: 0;
+    }
+}
+
+
 
 /************ 메인 컨텐츠 3 ************/
 
@@ -250,13 +279,58 @@ header {
     border: 1px solid #333;
     border-radius: 100px;
     margin-right: 8px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .bnav_list li:hover,
-.bnav_list li:active {
+.bnav_list li.active {
     background-color: #333;
     color: #fff;
 }
+
+.active {
+    background-color: #333;
+    color: #fff;
+}
+
+/* 책리스트 */
+
+.blist {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.blist li {
+    margin-right: 20px;
+    width: 200px;
+    height: 100%;
+}
+
+.blist span {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.blist img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.blist {
+    display: none;
+}
+
+#stock {
+    display: flex;
+}
+
 
 /************ 메인 컨텐츠 5 ************/
 
@@ -266,18 +340,21 @@ header {
     padding-bottom: 50px;
 }
 
+
 .tabBox {
     display: flex;
     justify-content: space-evenly;
 }
 
 .contentsBox {
-    margin-top: 30px;
+    margin-top: 20px;
+    padding-bottom: 20px;
 }
 
 .tab {
     padding: 30px 15%;
     border: 1px solid rgb(221, 221, 221);
+    border-bottom: transparent;
     cursor: pointer;
     font-size: 18px;
     background-color: #fff;
@@ -288,49 +365,6 @@ header {
     white-space: nowrap;
 }
 
-/* 슬라이더  */
-.swiper {
-    width: 100%;
-    height: 100%;
-}
-
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    justify-content: center;
-    align-items: center;
-}
-
-.swiper-slide img {
-    width: 30%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.swiper-pagination-bullet {
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    line-height: 20px;
-    font-size: 12px;
-    color: #000;
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.swiper-pagination-bullet-active {
-    color: #fff;
-    background: #007aff;
-}
-
-.swiper-slide {
-    display: flex;
-}
-
-.swiper-wrppaer {
-    display: flex;
-}
 
 /* 모바일 프레임 */
 .frame {
@@ -364,7 +398,7 @@ header {
 
 .mbx_6 h3 {
     font-size: 20px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .mbx_6 p {
@@ -381,12 +415,16 @@ header {
 }
 
 .QnAbox {
-    margin: 40px;
+    height: auto;
+    position: relative;
+    margin: 50px;
     padding: 30px;
+    padding-top: 20px;
     background-color: #fff;
     border-radius: 5px;
-    -webkit-box-shadow: 8px 9px 16px -6px #000000; 
+    -webkit-box-shadow: 8px 9px 16px -6px #000000;
     box-shadow: 8px 9px 16px -6px #000000;
+    overflow: hidden;
 }
 
 .QnAbox h2 {
@@ -394,6 +432,7 @@ header {
     font-size: 20px;
     margin-bottom: 20px;
 }
+
 
 .divider {
     height: 1px;
@@ -425,10 +464,10 @@ header {
 /************ 푸터 ************/
 
 .footer {
-    margin: 0px 30px;
-    margin-top: 20px;
+    padding: 0px 30px;
+    padding-top: 20px;
     height: 140px;
-
+    background-color: #eeeeee;
 }
 
 .ftitle {
@@ -457,4 +496,16 @@ header {
 
 .footer span {
     font-size: 10px;
+}
+
+/* 스크롤 액션 */
+.scAct {
+    opacity: 0;
+    margin-top: 40px;
+    transition: 1s ease-in-out;
+}
+
+.scAct.on {
+    opacity: 1;
+    margin-top: 0;
 }

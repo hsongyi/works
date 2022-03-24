@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
-    <script src="./js/main.js"></script>
-    <script src="./js/jquery-ui.min.js"></script>
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://kit.fontawesome.com/08ff8c04c0.js" crossorigin="anonymous"></script>
     <title>밀리의 서재</title>
 </head>
 
@@ -67,7 +67,7 @@
             </div>
         </section>
         <section class="mbx_3 movingBooks">
-            <div class="mtxt">
+            <div class="mtxt scAct">
                 <h1>당신을 기다리는 <br> 100,000권의 도서</h1>
                 <h2>첫 달 무료 구독을 통해 <br> 어떤 도서가 있는지 확인해보세요</h2>
             </div>
@@ -128,42 +128,179 @@
                 <img src="./images/subbanner2.png" width="230" alt="중간배너">
             </div>
         </section>
-        <section class="mbx_5 genre">
-            <div class="mtxt">
+        <section class="mbx_5">
+            <div class="mtxt scAct">
                 <h1>관심 분야에 있는 책도 <br> 딱 골라드려요</h1>
                 <h2>검색어 순위를 통해 뽑은 <br> 인기 분야 책들을 확인해보세요</h2>
             </div>
             <div class="bnav">
                 <ul class="bnav_list">
-                    <a href="#">
-                        <li id="bl1">주식</li>
-                    </a>
-                    <a href="#">
-                        <li id="bl2">영어</li>
-                    </a>
-                    <a href="#">
-                        <li id="bl3">고전</li>
-                    </a>
-                    <a href="#">
-                        <li id="bl4">인테리어</li>
-                    </a>
+                    <li id=list1 class="btn stock">주식</li>
+                    <li id=list2 class="btn English">영어</li>
+                    <li id=list3 class="btn classic">고전</li>
+                    <li id=list4 class="btn interior">인테리어</li>
                 </ul>
+                <div>
+                    <ol id="stock" class="blist">
+                        <li>
+                            <img src="./images/stock04.jpg" alt="주식"><br>
+                            <span>주린이가 알고싶은 최다질문</span><br>
+                            <span>원앤원컨텐츠그룹</span>
+                        </li>
+                        <li>
+                            <img src="./images/stock05.jpg" alt="주식">
+                            <span>주린이도 술술읽는 주식책</span><br>
+                            <span>원앤원컨텐츠그룹</span>
+                        </li>
+                        <li>
+                            <img src="./images/stock06.jpg" alt="주식">
+                            <span>난생처음 주식투자</span><br>
+                            <span>라온북</span>
+                        </li>
+                        <li>
+                            <img src="./images/stock07.jpg" alt="주식">
+                            <span>주식투자 무작정 따라하기</span><br>
+                            <span>e-KPC</span>
+                        </li>
+                        <li>
+                            <img src="./images/stock08.jpg" alt="주식">
+                            <span>슈퍼개미 왕초보 주식수업</span><br>
+                            <span>이레미디어</span>
+                        </li>
+                        <li>
+                            <img src="./images/stock01.jpg" alt="주식">
+                            <span>내 인생의 첫 주식공부</span><br>
+                            <span>원앤원컨텐츠그룹</span>
+                        </li>
+                        <li>
+                            <img src="./images/stock02.jpg" alt="주식">
+                            <span>왕초보 주식투자 시크릿</span><br>
+                            <span>이레미디어</span>
+                        </li>
+                    </ol>
+                    <ol id="English" class="blist">
+                        <li>
+                            <img src="./images/eng1.jpg" alt="영어"><br>
+                            <span>야나두 영어회화</span><br>
+                            <span>타인의 취향</span>
+                        </li>
+                        <li>
+                            <img src="./images/eng2.jpg" alt="영어"><br>
+                            <span>나 혼자만 알고싶은 영어책</span><br>
+                            <span>비전팩토리</span>
+                        </li>
+                        <li>
+                            <img src="./images/eng3.jpg" alt="영어"><br>
+                            <span>혼자 공부하는 영어 습관의 힘</span><br>
+                            <span>키출판사</span>
+                        </li>
+                        <li>
+                            <img src="./images/eng4.jpg" alt="영어"><br>
+                            <span>한국인 화자 시점 영어</span><br>
+                            <span>사람in</span>
+                        </li>
+                        <li>
+                            <img src="./images/eng5.jpg" alt="영어"><br>
+                            <span>영어, 이제는 잘할때도 됐다</span><br>
+                            <span>넥서스</span>
+                        </li>
+                        <li>
+                            <img src="./images/eng6.jpg" alt="영어"><br>
+                            <span>사용빈도 1억 영어회화 표현</span><br>
+                            <span>사람in</span>
+                        </li>
+                        <li>
+                            <img src="./images/eng7.jpg" alt="영어"><br>
+                            <span>나혼자 끝내는 영어 첫걸음</span><br>
+                            <span>넥서스</span>
+                        </li>
+                    </ol>
+                    <ol id="classic" class="blist">
+                        <li>
+                            <img src="./images/classic1.jpg" alt="고전"><br>
+                            <span>까라마조프 씨네형제들</span><br>
+                            <span>열린책들</span>
+                        </li>
+                        <li>
+                            <img src="./images/classic2.jpg" alt="고전"><br>
+                            <span>변신-시골의사</span><br>
+                            <span>원앤원컨텐츠그룹</span>
+                        </li>
+                        <li>
+                            <img src="./images/classic3.jpg" alt="고전"><br>
+                            <span>이방인</span><br>
+                            <span>비전팩토리</span>
+                        </li>
+                        <li>
+                            <img src="./images/classic4.jpg" alt="고전"><br>
+                            <span>1984:에디터스 컬렉션</span><br>
+                            <span>문예출판사</span>
+                        </li>
+                        <li>
+                            <img src="./images/classic5.jpg" alt="고전"><br>
+                            <span>데미안</span><br>
+                            <span>을유문화사</span>
+                        </li>
+                        <li>
+                            <img src="./images/classic6.jpg" alt="고전"><br>
+                            <span>인간실격</span><br>
+                            <span>문예출판사</span>
+                        </li>
+                    </ol>
+                    <ol id="interior" class="blist">
+                        <li>
+                            <img src="./images/interior1.jpg" alt="인테리어"><br>
+                            <span>패브릭 손뜨개</span><br>
+                            <span>한빛미디어</span>
+                        </li>
+                        <li>
+                            <img src="./images/interior2.jpg" alt="인테리어"><br>
+                            <span>코바늘 손뜨개 수업</span><br>
+                            <span>알에이치코리아</span>
+                        </li>
+                        <li>
+                            <img src="./images/interior3.jpg" alt="인테리어"><br>
+                            <span>감성 인테리어 손뜨개</span><br>
+                            <span>팜파스</span>
+                        </li>
+                        <li>
+                            <img src="./images/interior4.jpg" alt="인테리어"><br>
+                            <span>낭만 가득 프랑스 자수</span><br>
+                            <span>42미디어콘텐츠</span>
+                        </li>
+                        <li>
+                            <img src="./images/interior5.jpg" alt="인테리어"><br>
+                            <span>모티브 손뜨개 소품</span><br>
+                            <span>팜파스</span>
+                        </li>
+                        <li>
+                            <img src="./images/interior6.jpg" alt="인테리어"><br>
+                            <span>친절한 재봉틀 교실</span><br>
+                            <span>비전비엔피</span>
+                        </li>
+                        <li>
+                            <img src="./images/interior7.jpg" alt="인테리어"><br>
+                            <span>로제의 빈티지 손뜨개</span><br>
+                            <span>팜파스</span>
+                        </li>
+                    </ol>
+                </div>
             </div>
         </section>
         <section class="mbx_6 tabMenu">
             <div class="tabBox">
-                <div class="tab tab1">
+                <div class="tab" id=tab1>
                     <span>오디오북</span>
                 </div>
-                <div class="tab tab2">
+                <div class="tab" id=tab2>
                     <span>밀리뷰어</span>
                 </div>
-                <div class="tab tab3">
+                <div class="tab" id=tab3>
                     <span>투데이</span>
                 </div>
             </div>
             <div class="contentsBox">
-                <div class="mtxt">
+                <div class="mtxt scAct" id="tabCont">
                     <h1>오디오북</h1>
                     <h2>세상에서 가장 <br> 교양있는 수면제</h2>
                 </div>
@@ -173,24 +310,24 @@
                         <img src="./images/abook1.png" alt="frameimg">
                     </div>
                 </div>
-                <div class="mtxt">
+                <div class="mtxt mtxt2">
                     <h3>하루의 시작과 마무리를 오디오북과 함께</h3>
                     <p>지하철에서도, 잠들기 전에도 독서하세요</p>
                 </div>
         </section>
         <section class="mbx_7 QnA">
-            <div class="mtxt">
+            <div class="mtxt scAct">
                 <h1>자주 묻는 질문</h1>
             </div>
             <div class="QnAbox">
                 <h2>안쓰면 정말 환불해주나요?</h2>
                 <div class="divider"></div>
-                <p>물론입니다. 물론입니다. 결제 후 콘텐츠 다운로드 및 열람을 하지 않으셨다면 전액 환불해 드리고 있어요. </p>
+                <p> 물론입니다. 결제 후 콘텐츠 다운로드 및 열람을 하지 않으셨다면 전액 환불해 드리고 있어요. </p>
             </div>
             <div class="QnAbox">
                 <h2>구독 중 해지할 수 있나요? 수수료는 없나요?</h2>
                 <div class="divider"></div>
-                <p>다음달부터 결제되지 않도록 수수료 없이 언제든지 해시하실 수 있습니다. </p>
+                <p>다음달부터 결제되지 않도록 수수료 없이 언제든지 해지하실 수 있습니다. </p>
             </div>
             <div class="QnAbox">
                 <h2>첫달 무료 혜택은 누구나 받을 수 있나요?</h2>
@@ -198,8 +335,8 @@
                 <p>네. 밀리 회원이라면 누!구!나! 첫 정기구독 신청 시 1회 제공됩니다. <br> 아직 신청하지 않으셨다면 바로 구독신청으로 혜택을 받아보세요. </p>
             </div>
             <div class="chat">
-            <H2>채팅상담</H2>
-            <img src="./images/pngwing.com.png" width="30" alt="채팅상담">
+                <H2>채팅상담</H2>
+                <img src="./images/pngwing.com.png" width="30" alt="채팅상담">
             </div>
         </section>
         <footer class="footer">
@@ -208,11 +345,11 @@
                     <h2>(주)밀리의 서재</h2>
                 </div>
                 <div class="fsns">
-                    <img src="./images/sns01.png" alt="sns">
-                    <img src="./images/sns02.png" alt="sns">
-                    <img src="./images/sns03.png" alt="sns">
-                    <img src="./images/sns04.png" alt="sns">
-                    <img src="./images/sns05.png" alt="sns">
+                    <a href="#"><img src="./images/sns01.png" alt="sns"></a>
+                    <a href="#"><img src="./images/sns02.png" alt="sns"></a>
+                    <a href="#"><img src="./images/sns03.png" alt="sns"></a>
+                    <a href="#"><img src="./images/sns04.png" alt="sns"></a>
+                    <a href="#"><img src="./images/sns05.png" alt="sns"></a>
                 </div>
             </div>
             <ul class="fmenu">

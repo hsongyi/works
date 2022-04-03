@@ -52,7 +52,6 @@ body {
     margin-top: 20px;
     padding: 20px;
     max-width: 1200px;
-    
 }
 
 /*  profile  */
@@ -67,11 +66,20 @@ body {
 .profile_pic {
     height: 250px;
     margin: 15px 10px;
+    margin-bottom: 40px;
+}
+
+.profile_pic img {
+    width: 200px;
+    opacity: .85;
+    border: 4px solid rgba(255, 255, 255, 0.493);
+    border-radius: 6px;
+    box-sizing: border-box;
 }
 
 .profile_cont {
     height: 250px;
-    margin: 15px 10px;
+    margin: 20px 10px;
     background-color: #ffffff6a;
 }
 
@@ -94,8 +102,11 @@ body {
 
 .about_cont {
     margin-top: 20px;
+    padding:15px;
     height: 100px;
     background-color: #ffffff6a;
+    color: #777;
+    text-shadow: .8px .8px 1px rgb(198, 198, 198);
 }
 
 .about_skill {
@@ -200,9 +211,41 @@ body {
 }
 
 .project span {
+    display: inline-block;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    background-color: rgba(37, 129, 106, 0.13);
+    padding: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #fff;
+}
+
+
+/* top button */
+.topbtn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 30px;
+    right: 5%;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    opacity: .5;
+    transition: opacity .3s;
+}
+
+.topbtn:hover {
+    opacity: .8;
+}
+
+.topbtn span {
     position: absolute;
-    font-weight: normal;
+    font-weight: bold;
+    color: #666;
+    line-height: 50px;
+    transform: translate(30%,0);
+    cursor: pointer;
 }

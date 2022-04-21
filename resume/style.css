@@ -41,6 +41,11 @@ body * {
 
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
 body {
     background: rgb(161, 221, 204);
     background: linear-gradient(0deg, rgba(161, 221, 204, 0.5009165502793296) 48%, rgba(108, 191, 224, 0.3612517458100558) 74%);

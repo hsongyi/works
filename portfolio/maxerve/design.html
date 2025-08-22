@@ -16,7 +16,6 @@ h2{margin:26px 0 10px;font-size:16px;font-weight:700;color:var(--muted)}
 /* grid */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;user-select:none;caret-color:transparent}
 .card{grid-column:span 6;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.card.wide{grid-column:span 12}
 
 /* 스크롤 썸네일 */
 .thumb-box{height:250px;overflow-y:auto;background:#0b0e16}
@@ -40,13 +39,11 @@ a.inline:hover{border-color:#385;transform:translateY(-1px)}
 <body>
 <div class="container">
   <h1>Design Preview</h1>
-  <p class="note">디자인 시안 빠르게 살펴보기용 미니 보드. 이미지 안은 세로 스크롤로 훑어보고, 클릭하면 원본이 새 창에서 열립니다.</p>
-
   <!-- Maxerve 이미지 그리드 -->
   <h2>Maxerve</h2>
   <div class="grid">
     <!-- 메인 (와이드) -->
-    <a class="card wide" href="maxerve/00.png" target="_blank" rel="noopener">
+    <a class="card wide" href="00.png" target="_blank" rel="noopener">
       <div class="thumb-box">
         <img src="00.png" alt="Maxerve 메인 시안 전체">
       </div>
@@ -54,17 +51,17 @@ a.inline:hover{border-color:#385;transform:translateY(-1px)}
     </a>
 
     <!-- 서브 1 -->
-    <a class="card" href="maxerve/maxerve-sub.png" target="_blank" rel="noopener">
+    <a class="card" href="maxerve-sub.png" target="_blank" rel="noopener">
       <div class="thumb-box">
-        <img src="maxerve/maxerve-sub.png" alt="Maxerve 서브 1 상세">
+        <img src="maxerve-sub.png" alt="Maxerve 서브 1 상세">
       </div>
       <div class="cap"><span>서브 1</span><span>section</span></div>
     </a>
 
     <!-- 서브 2 -->
-    <a class="card" href="maxerve/maxerve-sub2.png" target="_blank" rel="noopener">
+    <a class="card" href="maxerve-sub2.png" target="_blank" rel="noopener">
       <div class="thumb-box">
-        <img src="maxerve/maxerve-sub2.png" alt="Maxerve 서브 2 상세">
+        <img src="maxerve-sub2.png" alt="Maxerve 서브 2 상세">
       </div>
       <div class="cap"><span>서브 2</span><span>details</span></div>
     </a>

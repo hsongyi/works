@@ -11,27 +11,30 @@ body{margin:0;background:#0f1320;color:var(--fg);font:14px/1.55 system-ui,-apple
 .container{max-width:1100px;margin:36px auto;padding:25px 0}
 h1{margin:0 0 8px;font-size:24px;font-weight:800}
 h2{margin:26px 0 10px;font-size:16px;font-weight:700;color:var(--muted)}
-.note{margin:0 0 18px;color:var(--muted)}
 
-/* grid */
+/* 공통 그리드(12) */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;user-select:none;caret-color:transparent}
 .card{grid-column:span 6;background:var(--card);border:1px solid var(--line);border-radius:5px;overflow:hidden}
-
-/* 스크롤 썸네일 */
 .thumb-box{height:360px;overflow-y:auto;background:#0b0e16}
 .card.wide .thumb-box{height:380px}
 .thumb-box img{display:block;width:100%;height:auto}
-
-/* 캡션/버튼 */
 .cap{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
 a.inline{display:inline-flex;gap:8px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:10px;color:var(--fg);text-decoration:none;background:var(--card)}
 a.inline:hover{border-color:#385;transform:translateY(-1px)}
-
-/* XD 섹션 래퍼 */
 .panel{border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
 .panel header{display:flex;justify-content:space-between;align-items:center;padding:10px;border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}
 
-@media(max-width:900px){.card{grid-column:span 12}}
+/* LG VOC: 데스크톱 4열, 동일 높이 카드 + 이미지 비율 유지(깨짐 방지) */
+.grid-lg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.grid-lg .card{grid-column:auto;height:320px;display:flex;flex-direction:column}
+.grid-lg .thumb-box{height:100%;overflow:hidden;background:#0b0e16;display:flex;align-items:center;justify-content:center}
+.grid-lg .thumb-box img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain}
+
+/* 반응형: 2열로 변경 */
+@media(max-width:900px){
+  .card{grid-column:span 12}
+  .grid-lg{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 </style>
 </head>
 <body>
@@ -59,24 +62,24 @@ a.inline:hover{border-color:#385;transform:translateY(-1px)}
     </a>
   </div>
 
-  <!-- LG화학 VOC 어플 디자인 (추가 섹션) -->
+  <!-- LG화학 VOC 어플 디자인 (4열 → 2열) -->
   <h2>LG화학 VOC 어플 디자인</h2>
-  <div class="grid">
+  <div class="grid-lg">
     <a class="card" href="lg1.png" target="_blank" rel="noopener">
-      <div class="thumb-box"><img src="lg1.png" alt="LG화학 VOC 어플 디자인 1"></div>
-      <div class="cap"><span>VOC 1</span><span>screen</span></div>
+      <div class="thumb-box"><img src="lg1.png" alt="LG VOC 디자인 1"></div>
+      <div class="cap"><span>VOC 1</span></div>
     </a>
     <a class="card" href="lg2.png" target="_blank" rel="noopener">
-      <div class="thumb-box"><img src="lg2.png" alt="LG화학 VOC 어플 디자인 2"></div>
-      <div class="cap"><span>VOC 2</span><span>screen</span></div>
+      <div class="thumb-box"><img src="lg2.png" alt="LG VOC 디자인 2"></div>
+      <div class="cap"><span>VOC 2</span></div>
     </a>
     <a class="card" href="lg3.png" target="_blank" rel="noopener">
-      <div class="thumb-box"><img src="lg3.png" alt="LG화학 VOC 어플 디자인 3"></div>
-      <div class="cap"><span>VOC 3</span><span>screen</span></div>
+      <div class="thumb-box"><img src="lg3.png" alt="LG VOC 디자인 3"></div>
+      <div class="cap"><span>VOC 3</span></div>
     </a>
     <a class="card" href="lg4.png" target="_blank" rel="noopener">
-      <div class="thumb-box"><img src="lg4.png" alt="LG화학 VOC 어플 디자인 4"></div>
-      <div class="cap"><span>VOC 4</span><span>screen</span></div>
+      <div class="thumb-box"><img src="lg4.png" alt="LG VOC 디자인 4"></div>
+      <div class="cap"><span>VOC 4</span></div>
     </a>
   </div>
 

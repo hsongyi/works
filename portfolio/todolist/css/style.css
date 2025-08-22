@@ -34,6 +34,7 @@ body {
 .items {
     height: 450px;
     overflow-y: auto;
+    caret-color: none;
 }
 
 .item {

@@ -6,67 +6,99 @@
 <title>Portfolio — Design Preview</title>
 <style>
 :root{--bg:#0f1320;--fg:#e8ecf1;--muted:#9aa4b2;--line:#263047;--card:#171c2b;--accent:#bc955c}
-*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:#0f1320;color:var(--fg);font:14px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:#0f1320;color:var(--fg);font:14px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
 .container{max-width:1100px;margin:36px auto;padding:0 18px}
 h1{margin:0 0 8px;font-size:24px;font-weight:800}
 h2{margin:26px 0 10px;font-size:16px;font-weight:700;color:var(--muted)}
 .note{margin:0 0 18px;color:var(--muted)}
+
 /* grid */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;user-select:none;caret-color:transparent}
 .card{grid-column:span 6;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .card.wide{grid-column:span 12}
-.thumb{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#0b0e16}
+
+/* 스크롤 썸네일 */
+.thumb-box{height:250px;overflow-y:auto;background:#0b0e16}
+.card.wide .thumb-box{height:380px}
+.thumb-box img{display:block;width:100%;height:auto}
+
+/* 캡션/버튼 */
 .cap{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
 a.inline{display:inline-flex;gap:8px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:10px;color:var(--fg);text-decoration:none;background:var(--card)}
 a.inline:hover{border-color:#385;transform:translateY(-1px)}
-/* iframe wrapper */
-.embed{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
-.embed header{display:flex;justify-content:space-between;align-items:center;padding:10px;border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}
-iframe{width:100%;height:80vh;border:0}
+
+/* XD 섹션 래퍼 */
+.panel{border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+.panel header{display:flex;justify-content:space-between;align-items:center;padding:10px;border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}
+
 @media(max-width:900px){.card{grid-column:span 12}}
+/* 선택 방지(캐럿 숨김) */
+.grid *{user-select:none;caret-color:transparent}
 </style>
 </head>
 <body>
 <div class="container">
   <h1>Design Preview</h1>
-  <p class="note">디자인 시안 빠르게 살펴보기용 미니 보드. 이미지 클릭 시 원본이 새 창에서 열립니다.</p>
+  <p class="note">디자인 시안 빠르게 살펴보기용 미니 보드. 이미지 안은 세로 스크롤로 훑어보고, 클릭하면 원본이 새 창에서 열립니다.</p>
 
   <!-- Maxerve 이미지 그리드 -->
   <h2>Maxerve</h2>
   <div class="grid">
+    <!-- 메인 (와이드) -->
     <a class="card wide" href="maxerve/00.png" target="_blank" rel="noopener">
-      <img class="thumb" src="maxerve/00.png" alt="Maxerve 메인 시안">
+      <div class="thumb-box">
+        <img src="maxerve/00.png" alt="Maxerve 메인 시안 전체">
+      </div>
       <div class="cap"><span>00. 메인</span><span style="color:var(--accent)">landing</span></div>
     </a>
-    <a class="card" href="maxerve-sub.png" target="_blank" rel="noopener">
-      <img class="thumb" src="maxerve-sub.png" alt="Maxerve 서브 1">
+
+    <!-- 서브 1 -->
+    <a class="card" href="maxerve/maxerve-sub.png" target="_blank" rel="noopener">
+      <div class="thumb-box">
+        <img src="maxerve/maxerve-sub.png" alt="Maxerve 서브 1 상세">
+      </div>
       <div class="cap"><span>서브 1</span><span>section</span></div>
     </a>
-    <a class="card" href="maxerve-sub2.png" target="_blank" rel="noopener">
-      <img class="thumb" src="maxerve-sub2.png" alt="Maxerve 서브 2">
+
+    <!-- 서브 2 -->
+    <a class="card" href="maxerve/maxerve-sub2.png" target="_blank" rel="noopener">
+      <div class="thumb-box">
+        <img src="maxerve/maxerve-sub2.png" alt="Maxerve 서브 2 상세">
+      </div>
       <div class="cap"><span>서브 2</span><span>details</span></div>
     </a>
-    <a class="card wide" href="maxerve-sub3.png" target="_blank" rel="noopener">
-      <img class="thumb" src="maxerve-sub3.png" alt="Maxerve 서브 3(와이드)">
+
+    <!-- 서브 3 (와이드) -->
+    <a class="card wide" href="maxerve/maxerve-sub3.png" target="_blank" rel="noopener">
+      <div class="thumb-box">
+        <img src="maxerve/maxerve-sub3.png" alt="Maxerve 서브 3 와이드">
+      </div>
       <div class="cap"><span>서브 3</span><span>wide</span></div>
     </a>
   </div>
 
-  <!-- BowlRoom XD 임베드 (공유 링크) -->
+  <!-- BowlRoom XD: iframe 제거(차단됨). 썸네일 + 버튼만 -->
   <h2 style="margin-top:28px">BowlRoom — XD Prototype</h2>
-  <div class="embed">
+  <div class="panel">
     <header>
-      <span>XD 공유 링크 임베드</span>
+      <span>XD 공유 링크는 보안 정책으로 iframe 임베드가 차단됩니다.</span>
       <span>
-        <a class="inline" href="./BowlRoom/Bowl%20Room.xd" download>XD 원본 다운로드</a>
+        <a class="inline" href="BowlRoom/Bowl%20Room.xd" download>XD 원본 다운로드</a>
         <a class="inline" href="https://xd.adobe.com/view/a5bd4d45-a49e-422e-8286-d58e288c5cb6-f0ee/" target="_blank" rel="noopener">새 창으로 열기</a>
       </span>
     </header>
-    <iframe src="https://xd.adobe.com/view/a5bd4d45-a49e-422e-8286-d58e288c5cb6-f0ee/" allowfullscreen title="BowlRoom XD Prototype"></iframe>
+    <!-- 선택: XD 썸네일(스크린샷) 넣어두면 보기 좋아짐 -->
+    <a href="https://xd.adobe.com/view/a5bd4d45-a49e-422e-8286-d58e288c5cb6-f0ee/" target="_blank" rel="noopener" style="display:block">
+      <div class="thumb-box">
+        <img src="BowlRoom/xd-thumb.png" alt="XD 프로토타입 썸네일(샘플)">
+      </div>
+    </a>
   </div>
 
-  <!-- BowlRoom PDF: 링크만-->
+  <!-- BowlRoom PDF -->
   <h2>BowlRoom — PDF</h2>
-  <a class="inline" href="./BowlRoom/Bowl Room.pdf" target="_blank" rel="noopener">PDF 미리보기 열기</a>
+  <a class="inline" href="BowlRoom/Bowl%20Room.pdf" target="_blank" rel="noopener">PDF 미리보기 열기</a>
+</div>
 </body>
 </html>

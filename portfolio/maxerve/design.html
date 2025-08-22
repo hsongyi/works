@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio — UI/UX</title>
+<style>
+/* ===== compact CSS ===== */
+:root{--bg:#0f1320;--fg:#e8ecf1;--muted:#9aa4b2;--card:#171c2b;--line:#263047;--accent:#bc955c}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:linear-gradient(180deg,#0c101b,#0f1320 35%,#0f1320);color:var(--fg);font:14px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+a{color:inherit;text-decoration:none}
+.container{max-width:1180px;margin:40px auto;padding:0 20px}
+.header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.badge{padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.h1{font-weight:800;font-size:28px;letter-spacing:.2px}
+.desc{color:var(--muted);margin:6px 0 20px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 22px}
+.tab{background:var(--card);border:1px solid var(--line);color:var(--fg);padding:9px 14px;border-radius:10px;cursor:pointer;transition:.15s}
+.tab.active{border-color:var(--accent);box-shadow:0 0 0 1px color-mix(in srgb,var(--accent),transparent 70%) inset}
+.section{display:none}
+.section.active{display:block}
+.hr{height:1px;background:var(--line);margin:24px 0}
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.card .cap{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+.thumb{display:block;aspect-ratio:16/10;width:100%;object-fit:cover;background:#0b0e16}
+.tag{font-size:11px;color:var(--accent)}
+.col-12{grid-column:span 12}.col-8{grid-column:span 8}.col-6{grid-column:span 6}.col-4{grid-column:span 4}
+@media (max-width:1024px){.col-8{grid-column:span 12}.col-6{grid-column:span 6}.col-4{grid-column:span 6}}
+@media (max-width:640px){.grid{gap:12px}.col-6,.col-4{grid-column:span 12}}
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(3,6,12,.86);backdrop-filter:saturate(140%) blur(6px);display:none;align-items:center;justify-content:center;z-index:999}
+.lb.active{display:flex}
+.lb-inner{max-width:min(92vw,1200px);max-height:86vh;display:grid;grid-template-rows:auto 1fr auto;gap:10px}
+.lb-img{max-width:100%;max-height:70vh;border:1px solid var(--line);border-radius:12px;background:#000;object-fit:contain}
+.lb-head,.lb-foot{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:13px}
+.controls{display:flex;gap:8px}
+.icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;cursor:pointer}
+.icon-btn:hover{border-color:#3a4763}
+.kbd{border:1px solid var(--line);padding:0 6px;border-radius:6px;margin-left:6px;color:#b7c0cf}
+/* embed wrappers */
+.embed{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.embed header{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line);color:var(--muted)}
+iframe,embed{width:100%;border:0}
+.pdf{height:80vh} .xd{height:88vh}
+.footer{margin:28px 0 14px;color:var(--muted);font-size:12px;text-align:center}
+.btn{background:var(--card);border:1px solid var(--line);color:var(--fg);padding:8px 12px;border-radius:10px;cursor:pointer}
+.btn:hover{border-color:#345;transform:translateY(-1px)}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <span class="badge">PORTFOLIO</span>
+    <div class="h1">Maxerve & BowlRoom 종합 보드</div>
+  </div>
+  <p class="desc">이미지 갤러리, XD 프로토타입 임베드, PDF 미리보기를 한 방에. <span style="color:var(--accent)">#bc955c</span>로 살짝 간지.</p>
+
+  <!-- Tabs -->
+  <nav class="tabs" role="tablist" aria-label="콘텐츠 전환">
+    <button class="tab active" data-target="#maxerve" role="tab" aria-selected="true">Maxerve 갤러리</button>
+    <button class="tab" data-target="#bowl-xd" role="tab" aria-selected="false">BowlRoom — XD</button>
+    <button class="tab" data-target="#bowl-pdf" role="tab" aria-selected="false">BowlRoom — PDF</button>
+  </nav>
+
+  <!-- Maxerve Section -->
+  <section id="maxerve" class="section active" aria-labelledby="Maxerve 갤러리">
+    <div class="grid" id="gallery">
+      <figure class="card col-12" data-src="./maxerve/00.png" data-title="00. 메인 화면" data-desc="랜딩 키비주얼">
+        <img class="thumb" src="./maxerve/00.png" alt="Maxerve 메인 화면 섬네일" loading="lazy" />
+        <figcaption class="cap"><span>00. 메인 화면</span><span class="tag">landing</span></figcaption>
+      </figure>
+      <figure class="card col-6" data-src="./maxerve/maxerve-sub.png" data-title="서브 페이지 1" data-desc="콘텐츠 섹션 배치">
+        <img class="thumb" src="./maxerve/maxerve-sub.png" alt="서브 페이지 1 섬네일" loading="lazy" />
+        <figcaption class="cap"><span>서브 페이지 1</span><span class="tag">section</span></figcaption>
+      </figure>
+      <figure class="card col-6" data-src="./maxerve/maxerve-sub2.png" data-title="서브 페이지 2" data-desc="상세 컴포넌트">
+        <img class="thumb" src="./maxerve/maxerve-sub2.png" alt="서브 페이지 2 섬네일" loading="lazy" />
+        <figcaption class="cap"><span>서브 페이지 2</span><span class="tag">details</span></figcaption>
+      </figure>
+      <figure class="card col-12" data-src="./maxerve/maxerve-sub3.png" data-title="서브 페이지 3" data-desc="릴레이아웃 대형 시안">
+        <img class="thumb" src="./maxerve/maxerve-sub3.png" alt="서브 페이지 3 섬네일" loading="lazy" />
+        <figcaption class="cap"><span>서브 페이지 3</span><span class="tag">wide</span></figcaption>
+      </figure>
+    </div>
+
+    <div style="margin:14px 0;display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn" data-fit="contain">Fit: Contain</button>
+      <button class="btn" data-fit="cover">Fit: Cover</button>
+      <button class="btn" id="dlBtn">현재 이미지 저장</button>
+    </div>
+    <div class="hr"></div>
+  </section>
+
+  <!-- BowlRoom XD -->
+  <section id="bowl-xd" class="section" aria-labelledby="BowlRoom XD">
+    <div class="embed">
+      <header>
+        <div>🔥 BowlRoom — XD Prototype (전체화면 지원)</div>
+        <div style="display:flex;gap:8px">
+          <a class="btn" href="./BowlRoom/Bowl%20Room.xd" download>XD 원본 다운로드</a>
+          <a class="btn" href="https://xd.adobe.com/view/a5bd4d45-a49e-422e-8286-d58e288c5cb6-f0ee/" target="_blank" rel="noopener">새 창으로 열기</a>
+        </div>
+      </header>
+      <iframe class="xd" src="https://xd.adobe.com/view/a5bd4d45-a49e-422e-8286-d58e288c5cb6-f0ee/" allowfullscreen title="BowlRoom XD Prototype"></iframe>
+    </div>
+    <div class="hr"></div>
+  </section>
+
+  <!-- BowlRoom PDF -->
+  <section id="bowl-pdf" class="section" aria-labelledby="BowlRoom PDF">
+    <div class="embed">
+      <header>
+        <div>📄 BowlRoom — PDF Preview</div>
+        <a class="btn" href="./BowlRoom/Bowl%20Room.pdf" target="_blank" rel="noopener">새 창으로 열기</a>
+      </header>
+      <!-- 브라우저 내장 PDF 뷰어 -->
+      <embed class="pdf" src="./BowlRoom/Bowl%20Room.pdf#view=FitH" type="application/pdf" />
+    </div>
+    <div class="hr"></div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="이미지 뷰어">
+    <div class="lb-inner">
+      <div class="lb-head">
+        <div><strong id="lbTitle">제목</strong> <span class="kbd">ESC</span></div>
+        <button class="icon-btn" id="closeBtn" aria-label="닫기">✕</button>
+      </div>
+      <img id="lbImg" class="lb-img" alt="확대 이미지" />
+      <div class="lb-foot">
+        <div id="lbDesc">설명</div>
+        <div class="controls">
+          <button class="icon-btn" id="prevBtn" aria-label="이전(←)">⟨</button>
+          <button class="icon-btn" id="nextBtn" aria-label="다음(→)">⟩</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">© unified board · ←/→ 탐색 · ESC 닫기 · 브라우저는 XD를 직접 못 열어서 iframe은 공유링크로 임베드함</div>
+</div>
+
+<script>
+/* ===== Tabs ===== */
+const tabBtns=[...document.querySelectorAll('.tab')];
+tabBtns.forEach(b=>b.addEventListener('click',e=>{
+  tabBtns.forEach(x=>x.classList.remove('active'));
+  e.currentTarget.classList.add('active');
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelector(e.currentTarget.dataset.target).classList.add('active');
+}));
+/* ===== Gallery Lightbox ===== */
+const items=[...document.querySelectorAll('#gallery .card')].map((el,i)=>({el,src:el.dataset.src,title:el.dataset.title||'',desc:el.dataset.desc||'',i}));
+let idx=-1,fitMode='contain';
+const lb=$("#lightbox"),img=$("#lbImg"),tit=$("#lbTitle"),desc=$("#lbDesc");
+function $(s){return document.querySelector(s)}
+function open(i){idx=(i+items.length)%items.length;const it=items[idx];img.src=it.src;img.style.objectFit=fitMode;tit.textContent=it.title;desc.textContent=it.desc||'';lb.classList.add('active');img.focus()}
+function close(){lb.classList.remove('active');idx=-1}
+function next(){open(idx+1)}function prev(){open(idx-1)}
+items.forEach((it,i)=>it.el.addEventListener('click',()=>open(i)));
+$("#closeBtn").onclick=close;$("#nextBtn").onclick=next;$("#prevBtn").onclick=prev;
+window.addEventListener('keydown',e=>{if(!lb.classList.contains('active'))return;if(e.key==='Escape')close();if(e.key==='ArrowRight')next();if(e.key==='ArrowLeft')prev();});
+document.querySelectorAll('.btn[data-fit]').forEach(b=>b.addEventListener('click',e=>{fitMode=e.currentTarget.dataset.fit;img.style.objectFit=fitMode;}));
+$("#dlBtn").addEventListener('click',()=>{if(idx<0){alert('먼저 이미지를 열어줘!');return;}const a=document.createElement('a');a.href=items[idx].src;a.download=items[idx].src.split('/').pop();a.click();});
+lb.addEventListener('click',e=>{if(e.target===lb)close();});
+</script>
+</body>
+</html>
